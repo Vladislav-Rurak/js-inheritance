@@ -59,3 +59,54 @@ const vehicle = new Vehicle(
   date
 );
 console.log("vehicle :>> ", vehicle);
+
+class PassengerTransport extends Vehicle {
+  constructor(
+    length,
+    width,
+    height,
+    brand,
+    model,
+    manufactureDate,
+    passengerLimit,
+    passengerCount
+  ) {
+    super(
+      length,
+      width,
+      height,
+      brand,
+      model,
+      manufactureDate
+    );
+    this.passengerLimit =
+      passengerLimit;
+    this.passengerCount =
+      passengerCount;
+  }
+  addPassenger() {
+    if (
+      this.passengerCount <=
+      this.passengerLimit
+    ) {
+      this.passengerCount++;
+      return true;
+    }
+    return false;
+  }
+}
+const passengerTransport =
+  new PassengerTransport(
+    5,
+    4,
+    6,
+    "Volkswagen",
+    "Sprinter",
+    2003,
+    18,
+    15
+  );
+console.log(
+  "passengerTransport :>> ",
+  passengerTransport
+);

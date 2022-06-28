@@ -110,3 +110,45 @@ console.log(
   "passengerTransport :>> ",
   passengerTransport
 );
+
+class FreightTransport extends PassengerTransport {
+  constructor(
+    length,
+    width,
+    height,
+    brand,
+    model,
+    manufactureDate,
+    passengerLimit,
+    passengerCount,
+    capacity
+  ) {
+    super(
+      length,
+      width,
+      height,
+      brand,
+      model,
+      manufactureDate,
+      passengerLimit,
+      passengerCount
+    );
+    this.capacity = capacity;
+  }
+  checkLoadingPossibility(weight) {
+    return this.capacity >= weight;
+  }
+}
+
+const freightTransport =
+  new FreightTransport(
+    6,
+    8,
+    9,
+    "Man",
+    "X",
+    2003,
+    0,
+    0,
+    500
+  );
